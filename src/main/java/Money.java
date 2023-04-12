@@ -1,5 +1,3 @@
-package java;
-
 public class Money implements Expression {
     protected int amount;
     protected String currency;

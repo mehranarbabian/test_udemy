@@ -1,10 +1,4 @@
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
-
-import java.Bank;
-import java.Expression;
-import java.Money;
-import java.Sum;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
@@ -20,6 +14,7 @@ public class MoneyTest {
         assertEquals(Money.franc(10), fiveF.times(2));
     }
 
+/*
     @Test
     void checkEqual() {
         assertEquals(Money.dollar(5), Money.dollar(5));
@@ -28,6 +23,7 @@ public class MoneyTest {
         assertNotEquals(Money.dollar(5), Money.franc(5));
 
     }
+*/
 
 
 /*

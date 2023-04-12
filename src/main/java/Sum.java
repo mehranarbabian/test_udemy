@@ -1,5 +1,3 @@
-package java;
-
 public class Sum implements Expression {
     Expression augmend;
     Expression addmend;
