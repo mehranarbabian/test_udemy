@@ -1,3 +1,4 @@
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -14,7 +15,6 @@ public class MoneyTest {
         assertEquals(Money.franc(10), fiveF.times(2));
     }
 
-/*
     @Test
     void checkEqual() {
         assertEquals(Money.dollar(5), Money.dollar(5));
@@ -23,10 +23,8 @@ public class MoneyTest {
         assertNotEquals(Money.dollar(5), Money.franc(5));
 
     }
-*/
 
 
-/*
     @Test
     void testCurrency() {
         assertEquals("USD", Money.dollar(1).currency());
@@ -52,30 +50,29 @@ public class MoneyTest {
 
         assertEquals(Money.dollar(7), result);
     }
-*/
 
-//    @Test
-//    void testReduceMoneyDifferentCurrency() {
-//        Bank bank = new Bank();
-//        bank.addRate("CHF", "USD", 2);
-//        Money result = bank.reduce(Money.franc(2), "USD");
-//        assertEquals(Money.dollar(1), result);
-//    }
-//
-//    @Test
-//    void testIdentityRate() {
-//        assertEquals(1, new Bank().rate("USD", "USD"));
-//        assertEquals(1, new Bank().rate("CHF", "CHF"));
-//    }
-//
-//    @Test
-//    @Disabled("because of that")
-//    public void testMixedAddition() {
-//        Expression fiveBucks = Money.dollar(5);
-//        Expression tenFrank = Money.franc(10);
-//        Bank bank = new Bank();
-//        bank.addRate("CHF", "USD", 2);
-//        Money result = bank.reduce(fiveBucks.plus(tenFrank), "USD");
-//        assertEquals(Money.dollar(10), result);
-//    }
+    @Test
+    void testReduceMoneyDifferentCurrency() {
+        Bank bank = new Bank();
+        bank.addRate("CHF", "USD", 2);
+        Money result = bank.reduce(Money.franc(2), "USD");
+        assertEquals(Money.dollar(1), result);
+    }
+
+    @Test
+    void testIdentityRate() {
+        assertEquals(1, new Bank().rate("USD", "USD"));
+        assertEquals(1, new Bank().rate("CHF", "CHF"));
+    }
+
+    @Test
+    @Disabled("because of that")
+    public void testMixedAddition() {
+        Expression fiveBucks = Money.dollar(5);
+        Expression tenFrank = Money.franc(10);
+        Bank bank = new Bank();
+        bank.addRate("CHF", "USD", 2);
+        Money result = bank.reduce(fiveBucks.plus(tenFrank), "USD");
+        assertEquals(Money.dollar(10), result);
+    }
 }
