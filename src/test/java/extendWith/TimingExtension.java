@@ -8,6 +8,7 @@ public class TimingExtension implements BeforeTestExecutionCallback, AfterTestEx
     @Override
     public void afterTestExecution(ExtensionContext extensionContext) throws Exception {
         getStore(extensionContext).put("StartTime",System.currentTimeMillis());
+        System.out.println("after ");
 
     }
 
